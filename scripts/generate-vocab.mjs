@@ -136,8 +136,15 @@ async function tatoebaExample(word) {
     const { status, body } = await get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } })
     if (status !== 200) return ''
     const j = JSON.parse(body)
-    const re = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i')
-    const cands = (j.results || []).map((r) => r.text).filter((t) => t && re.test(t))
+    const texts = (j.results || []).map((r) => r.text).filter(Boolean)
+    const esc = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    // 1) exact whole-word match; 2) fall back to the word stem to catch
+    //    inflected forms (e.g. "tactful" → "tactfully", "abate" → "abated").
+    let cands = texts.filter((t) => new RegExp(`\\b${esc}\\b`, 'i').test(t))
+    if (!cands.length && word.length >= 5) {
+      const stem = word.slice(0, Math.max(5, word.length - 3))
+      cands = texts.filter((t) => new RegExp(`\\b${stem.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'i').test(t))
+    }
     if (!cands.length) return ''
     cands.sort((a, b) => exScore(b) - exScore(a))
     return cands[0]
