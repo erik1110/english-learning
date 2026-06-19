@@ -1,9 +1,14 @@
 // Real-life situational English — colloquial, British-leaning dialogues.
-// Each category has several scenarios; each scenario has 15+ lines.
+// Each category has several scenarios; each scenario has 10+ lines.
 // Roles are voiced differently (gender per speaker) and can be played
 // line-by-line or all at once in the UI.
+//
+// Categories are assembled from the core set below plus themed "packs", so the
+// library can grow toward 100 categories — add a new pack file and register it
+// in EXTRA_PACKS.
+import { PACK1 } from './situationsPack1'
 
-export const SITUATIONS = [
+const CORE = [
   {
     id: 'stocks',
     title: 'Stocks & Investing',
@@ -178,6 +183,11 @@ export const SITUATIONS = [
     ]
   }
 ]
+
+// Register themed packs here as the library grows toward 100 categories.
+const EXTRA_PACKS = [PACK1]
+
+export const SITUATIONS = [...CORE, ...EXTRA_PACKS.flat()]
 
 export function scenarioById(catId, scId) {
   const cat = SITUATIONS.find((c) => c.id === catId)

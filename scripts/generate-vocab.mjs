@@ -25,13 +25,23 @@ const CACHE_FILE = path.join(__dirname, '.vocab-cache.json')
 
 const TARGET = parseInt(process.env.TARGET || '1000', 10)
 const CONCURRENCY = parseInt(process.env.CONCURRENCY || '2', 10)
-const CANDIDATE_BUFFER = 1.6 // fetch extra candidates to cover genuine API misses
 
 const SOURCES = {
   B2: { url: 'https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv', level: 'B2' },
   C1: { url: 'https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/octanove-vocabulary-profile-c1c2-1.0.csv', level: 'C1' },
   C2: { url: 'https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/octanove-vocabulary-profile-c1c2-1.0.csv', level: 'C2' }
 }
+
+// Slurs / offensive terms that must never appear in a learning app, even if they
+// show up in the frequency backfill or word lists.
+const BLOCKLIST = new Set([
+  'gook', 'cripple', 'gypsy', 'chink', 'spic', 'wop', 'kike', 'nigger', 'nigga',
+  'negro', 'retard', 'retarded', 'faggot', 'fag', 'dyke', 'tranny', 'slut',
+  'whore', 'bitch', 'bastard', 'cunt', 'twat', 'wank', 'wanker', 'raghead',
+  'gimp', 'queer', 'jap', 'paki', 'gyp', 'redskin', 'spaz', 'spastic', 'midget',
+  'coolie', 'mongol', 'raunchy'
+])
+const allowed = (w) => !BLOCKLIST.has(w.toLowerCase())
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 const backoff = (attempt) => sleep(600 * 2 ** attempt + Math.random() * 400)
@@ -138,13 +148,9 @@ async function tatoebaExample(word) {
     const j = JSON.parse(body)
     const texts = (j.results || []).map((r) => r.text).filter(Boolean)
     const esc = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-    // 1) exact whole-word match; 2) fall back to the word stem to catch
-    //    inflected forms (e.g. "tactful" → "tactfully", "abate" → "abated").
-    let cands = texts.filter((t) => new RegExp(`\\b${esc}\\b`, 'i').test(t))
-    if (!cands.length && word.length >= 5) {
-      const stem = word.slice(0, Math.max(5, word.length - 3))
-      cands = texts.filter((t) => new RegExp(`\\b${stem.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'i').test(t))
-    }
+    // Require the exact headword (whole-word match) so the example genuinely
+    // illustrates the word, not just a related form.
+    const cands = texts.filter((t) => new RegExp(`\\b${esc}\\b`, 'i').test(t))
     if (!cands.length) return ''
     cands.sort((a, b) => exScore(b) - exScore(a))
     return cands[0]
@@ -186,10 +192,13 @@ async function enrich(word, csvPos) {
   const picked = pickFromDict(look.data[0], csvPos)
   if (!picked || !picked.definition) { cache[word] = { miss: true }; saveCache(); return cache[word] }
 
-  // Prefer a real example: dictionary → Tatoeba corpus → last-resort template.
-  let example = picked.example
+  // Require a real example that actually contains the headword: dictionary →
+  // Tatoeba corpus. If neither has one, reject the word (cache as a miss) so the
+  // level fills from a candidate that does — no templates, no mismatched examples.
+  const wordRe = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i')
+  let example = picked.example && wordRe.test(picked.example) ? picked.example : ''
   if (!example) example = await tatoebaExample(word)
-  if (!example) example = `The word "${word}" is commonly used in formal English.`
+  if (!example) { cache[word] = { miss: true }; saveCache(); return cache[word] }
   const [zh, exampleZh] = await Promise.all([translate(word), translate(example)])
   cache[word] = { word, phonetic: picked.phonetic || '', pos: picked.pos, definition: picked.definition, zh, example, exampleZh }
   saveCache()
@@ -220,6 +229,7 @@ function parseCandidates(csv, level) {
     if (cefr !== level) continue
     const w = (headword || '').trim().toLowerCase()
     if (!/^[a-z][a-z'-]*$/.test(w)) continue
+    if (!allowed(w)) continue
     if (seen.has(w)) continue
     seen.add(w)
     out.push({ word: w, pos: (pos || '').trim() })
@@ -239,9 +249,10 @@ async function buildLevel(key, backfill = []) {
   // from the frequency-based backfill pool (deduped against everything used).
   const have = new Set(cefr.map((c) => c.word))
   const extra = backfill.filter((w) => !used.has(w) && !have.has(w)).map((w) => ({ word: w, pos: '' }))
-  const candidates = cefr.concat(extra)
-  const slice = candidates.slice(0, Math.ceil(TARGET * CANDIDATE_BUFFER))
-  process.stdout.write(`[${level}] ${cefr.length} CEFR + ${extra.length} backfill candidates, enriching up to ${slice.length} (target ${TARGET})…\n`)
+  // Use the whole candidate pool: words without a real example are rejected, so
+  // we keep pulling from the next candidate until TARGET entries are collected.
+  const slice = cefr.concat(extra)
+  process.stdout.write(`[${level}] ${cefr.length} CEFR + ${extra.length} backfill candidates available (target ${TARGET})…\n`)
 
   const entries = []
   let transient = 0
@@ -291,18 +302,33 @@ async function repairExamples() {
 
 // Frequency-ranked advanced-word pool used to top up C1/C2 to 1000.
 const BACKFILL_URL = 'https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/en/en_50k.txt'
+// Is `w` an inflected form (plural / past / gerund / superlative) of a base word
+// that is also in the list? Used to keep backfill headwords as base lemmas.
+function isInflected(w, all) {
+  const bases = []
+  if (w.endsWith('ies')) bases.push(w.slice(0, -3) + 'y')
+  if (w.endsWith('es')) bases.push(w.slice(0, -2))
+  if (w.endsWith('s')) bases.push(w.slice(0, -1))
+  if (w.endsWith('ied')) bases.push(w.slice(0, -3) + 'y')
+  if (w.endsWith('ed')) { bases.push(w.slice(0, -2)); bases.push(w.slice(0, -1)) }
+  if (w.endsWith('ing')) { bases.push(w.slice(0, -3)); bases.push(w.slice(0, -3) + 'e') }
+  if (w.endsWith('est')) { bases.push(w.slice(0, -3)); bases.push(w.slice(0, -2)) }
+  return bases.some((b) => b.length >= 3 && all.has(b))
+}
+
 async function loadBackfill() {
   try {
     const { body } = await get(BACKFILL_URL)
     const seen = new Set()
-    const out = []
+    const words = []
     for (const line of body.split(/\r?\n/)) {
       const w = (line.split(' ')[0] || '').toLowerCase()
-      if (!/^[a-z]{5,15}$/.test(w) || seen.has(w)) continue
+      if (!/^[a-z]{5,15}$/.test(w) || seen.has(w) || !allowed(w)) continue
       seen.add(w)
-      out.push(w)
+      words.push(w)
     }
-    return out
+    // Drop inflected forms whose base lemma is also present (keeps "happy", not "happiest").
+    return words.filter((w) => !isInflected(w, seen))
   } catch {
     return []
   }
