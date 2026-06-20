@@ -7,6 +7,15 @@
 // library can grow toward 100 categories — add a new pack file and register it
 // in EXTRA_PACKS.
 import { PACK1 } from './situationsPack1'
+import { PACK2 } from './situationsPack2'
+import { PACK3 } from './situationsPack3'
+import { PACK4 } from './situationsPack4'
+import { PACK5 } from './situationsPack5'
+import { PACK6 } from './situationsPack6'
+import { PACK7 } from './situationsPack7'
+import { PACK8 } from './situationsPack8'
+import { PACK9 } from './situationsPack9'
+import { PACK10 } from './situationsPack10'
 
 const CORE = [
   {
@@ -185,7 +194,7 @@ const CORE = [
 ]
 
 // Register themed packs here as the library grows toward 100 categories.
-const EXTRA_PACKS = [PACK1]
+const EXTRA_PACKS = [PACK1, PACK2, PACK3, PACK4, PACK5, PACK6, PACK7, PACK8, PACK9, PACK10]
 
 export const SITUATIONS = [...CORE, ...EXTRA_PACKS.flat()]
 
