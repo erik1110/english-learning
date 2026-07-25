@@ -9,6 +9,7 @@ import Flashcard from './pages/Flashcard'
 import Starred from './pages/Starred'
 import Listening from './pages/Listening'
 import Speaking from './pages/Speaking'
+import Dictation from './pages/Dictation'
 import Situations from './pages/Situations'
 import Idioms from './pages/Idioms'
 import Settings from './pages/Settings'
@@ -27,7 +28,8 @@ const NAV = [
     group: '雅思模擬',
     items: [
       { id: 'listening', icon: '🎧', label: '雅思聽力' },
-      { id: 'speaking', icon: '🗣️', label: '雅思口說' }
+      { id: 'speaking', icon: '🗣️', label: '雅思口說' },
+      { id: 'dictation', icon: '⌨️', label: '英文聽打' }
     ]
   },
   {
@@ -61,6 +63,7 @@ export default function App() {
       case 'quiz-starred': return <Flashcard stars={stars} lockToStarred />
       case 'listening': return <Listening />
       case 'speaking': return <Speaking />
+      case 'dictation': return <Dictation />
       case 'situations': return <Situations />
       case 'idioms': return <Idioms />
       case 'settings': return <Settings />

@@ -197,3 +197,31 @@ select.voice-select { background: var(--card); border: 1px solid var(--border); 
   .nav-group-label { width: 100%; }
   .main { padding: 20px 16px 60px; }
 }
+
+/* ---------- Dictation (英文聽打) ---------- */
+.dictation-video { max-width: 760px; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.dictation-video iframe { width: 100%; height: 100%; display: block; border: 0; }
+
+.dictation-input {
+  width: 100%; box-sizing: border-box; resize: vertical;
+  background: var(--card-2); border: 1px solid var(--border); color: var(--text);
+  padding: 12px 14px; border-radius: 10px; font-size: 16px; line-height: 1.5; font-family: inherit;
+}
+.dictation-input:focus { outline: none; border-color: var(--accent); }
+.dictation-input::placeholder { color: var(--muted); }
+
+.dictation-feedback { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+.dictation-feedback .verdict { font-weight: 700; margin-bottom: 10px; color: var(--warn); }
+.dictation-feedback .verdict.perfect { color: var(--good); }
+
+.diff-line { font-size: 17px; line-height: 1.9; margin: 0; }
+.diff-line.answer { color: var(--text); }
+.dw { display: inline; margin-right: 5px; border-radius: 5px; padding: 0 2px; }
+.dw.ok { color: var(--good); }
+.dw.sub { color: var(--good); }
+.dw.sub s { color: var(--bad); text-decoration: line-through; margin-right: 3px; opacity: 0.85; }
+.dw.missing { color: var(--warn); border-bottom: 2px dashed var(--warn); }
+.dw.extra s { color: var(--bad); text-decoration: line-through; opacity: 0.8; }
+
+.diff-legend { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; font-size: 12.5px; }
+.diff-legend .dw { margin-right: 0; }

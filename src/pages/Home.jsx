@@ -44,6 +44,7 @@ export default function Home({ go, starCount }) {
         <UnitCard icon="⭐" title="我的收藏" desc={`${starCount} 個收藏，可專屬考試`} onClick={() => go('starred')} />
         <UnitCard icon="🎧" title="雅思聽力" desc={`${LISTENING_TESTS.length} 套模擬聽力`} onClick={() => go('listening')} />
         <UnitCard icon="🗣️" title="雅思口說" desc={`Part 1–3，共 ${SPEAKING_TESTS.length} 組`} onClick={() => go('speaking')} />
+        <UnitCard icon="⌨️" title="英文聽打" desc="YouTube 影片一句一句聽打、即時批改" onClick={() => go('dictation')} />
         <UnitCard icon="💬" title="英文情境" desc="股票 / 抱怨 / 運動，多角色對話" onClick={() => go('situations')} />
         <UnitCard icon="🇬🇧" title="道地英語用法" desc={`${ALL_IDIOMS.length} 個英式慣用語與片語`} onClick={() => go('idioms')} />
         <UnitCard icon="⚙️" title="發音設定" desc="挑選男聲／女聲與例句語速" onClick={() => go('settings')} />
