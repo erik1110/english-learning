@@ -19,7 +19,7 @@ export default function Themes() {
     <div>
       <div className="page-head">
         <h2>主題單字 · Vocabulary by Place</h2>
-        <p>用「場所」記單字：逛超市、下廚、逛 IKEA，每個字都配圖與例句。</p>
+        <p>用「場所」記單字：逛超市、下廚、修東西、逛 IKEA、出國旅行，每個字都配圖、用法提示與例句。</p>
       </div>
       <div className="grid cols-3">
         {THEME_AREAS.map((a) => {

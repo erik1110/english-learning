@@ -266,5 +266,94 @@ export const SUPERMARKET = {
         { en: 'out of stock', zh: '缺貨', art: '🚫', note: '貨架空了就說 they’re out of…；補貨叫 restock。', example: 'They’re out of eggs again — third week running.', exampleZh: '他們的蛋又缺貨了——連續第三週。' }
       ]
     }
+,
+    {
+      id: 'asian-sauces',
+      icon: '🧂',
+      title: 'Asian Supermarket — Sauces & Seasonings',
+      titleZh: '亞洲超市・醬料調味',
+      blurb: '在英國的中超、韓超、日超架上，這些瓶罐的英文名字。',
+      items: [
+        { en: 'light soy sauce', zh: '生抽／薄鹽醬油', art: 'soysauce', note: '鹹味主力、顏色淺，炒菜與沾醬用。英國架上常見 Kikkoman、Lee Kum Kee 與 Pearl River Bridge。', example: 'Light soy for seasoning, dark soy for colour.', exampleZh: '生抽調味，老抽上色。' },
+        { en: 'dark soy sauce', zh: '老抽', art: 'soysauce', note: '較濃稠、帶焦糖甜，主要功能是上色不是加鹹，紅燒必備。', example: 'A teaspoon of dark soy gives the braise that deep colour.', exampleZh: '一小匙老抽就能讓紅燒有那個深色。' },
+        { en: 'oyster sauce', zh: '蠔油', art: 'oystersauce', note: '濃稠帶鮮甜，燙青菜淋一點就很好吃；素食版叫 vegetarian stir-fry sauce（香菇素蠔油）。', example: 'Blanched greens with a drizzle of oyster sauce.', exampleZh: '燙青菜淋上一點蠔油。' },
+        { en: 'fish sauce', zh: '魚露', art: 'fishsauce', note: '東南亞的鹹鮮來源，味道衝但煮過會轉甘；越南叫 nuoc mam，泰國叫 nam pla。', example: 'Fish sauce smells fierce but mellows right down when cooked.', exampleZh: '魚露聞起來很衝，煮過味道就柔和了。' },
+        { en: 'toasted sesame oil', zh: '香油／麻油', art: 'sesameoil', note: '是起鍋前的提香油，不是拿來炒的；標 toasted 的才是深色香濃那種。', example: 'Sesame oil goes in at the end — never use it to fry.', exampleZh: '香油是起鍋前才加的，絕對不要拿來炒。' },
+        { en: 'rice vinegar', zh: '米醋', art: 'ricevinegar', note: '比西式醋溫和帶甜；壽司飯用的是加糖鹽的 seasoned rice vinegar。', example: 'Rice vinegar is much gentler than malt vinegar.', exampleZh: '米醋比麥芽醋溫和多了。' },
+        { en: 'Shaoxing rice wine', zh: '紹興酒／料理米酒', art: '🍶', note: '中式料理去腥增香，英國買不到時可用 dry sherry 代替。', example: 'A splash of Shaoxing wine takes the edge off the pork.', exampleZh: '加一點紹興酒可以去掉豬肉的腥味。' },
+        { en: 'chilli bean paste', zh: '豆瓣醬', art: 'doubanjiang', note: '川菜的靈魂，發酵蠶豆加辣椒；標 doubanjiang 或 toban djan，麻婆豆腐必備。', example: 'Fry the bean paste in oil first to bring the colour out.', exampleZh: '豆瓣醬要先用油炒過把紅油逼出來。' },
+        { en: 'gochujang', zh: '韓式辣椒醬', art: 'gochujang', note: '韓式發酵辣醬，甜辣濃稠；辣度標在盒上分級。', example: 'Gochujang is sweet and savoury as well as spicy.', exampleZh: '韓式辣椒醬除了辣，還帶甜與鹹鮮。' },
+        { en: 'miso paste', zh: '味噌', art: 'misopaste', note: 'white miso（白味噌）溫和偏甜，red miso（赤味噌）鹹而濃；煮湯別把味噌煮滾。', example: 'Never boil miso — it kills the flavour.', exampleZh: '味噌千萬別煮滾，香味會沒了。' },
+        { en: 'mirin', zh: '味醂', art: '🍶', note: '甜味料理酒，日式照燒醬的甜味來源。', example: 'Mirin gives teriyaki that glossy sweetness.', exampleZh: '味醂是照燒醬那種亮亮甜味的來源。' },
+        { en: 'hoisin sauce', zh: '海鮮醬', art: '🫙', note: '名字有 hoisin（海鮮）但裡面沒有海鮮，是甜麵醬類；北京烤鴨的沾醬。', example: 'Despite the name, hoisin has no seafood in it at all.', exampleZh: '雖然叫海鮮醬，裡面完全沒有海鮮。' },
+        { en: 'crispy chilli oil', zh: '辣油／脆辣椒油', art: '🌶️', note: '帶脆酥料的辣油，近年在英國紅到主流超市都有賣。', example: 'Crispy chilli oil goes on absolutely everything now.', exampleZh: '現在什麼東西都要淋一點脆辣椒油。' },
+        { en: 'five-spice powder', zh: '五香粉', art: '🫙', note: '八角、花椒、桂皮、丁香、茴香混合，滷味與烤肉常用。', example: 'A pinch of five-spice transforms roast pork.', exampleZh: '一小撮五香粉能讓烤豬肉整個不一樣。' },
+        { en: 'Sichuan peppercorns', zh: '花椒', art: '🫙', note: '不是辣是「麻」，英文形容為 numbing 或 tingling。', example: 'Sichuan peppercorns don’t burn, they make your lips tingle.', exampleZh: '花椒不是辣，是讓嘴唇發麻。' },
+        { en: 'star anise', zh: '八角', art: '⭐', note: '滷汁與燉肉的香料，一次一兩顆就夠，放多會苦。', example: 'One star anise is plenty — two makes it bitter.', exampleZh: '一顆八角就夠了，兩顆會發苦。' },
+        { en: 'white pepper', zh: '白胡椒', art: '🫙', note: '中式湯品用白胡椒不用黑胡椒，味道更土香、顏色不明顯。', example: 'Chinese soups want white pepper, not black.', exampleZh: '中式湯要用白胡椒，不是黑胡椒。' },
+        { en: 'cornflour', zh: '玉米澱粉／太白粉', art: '🌽', note: '英式叫 cornflour，美式叫 cornstarch；勾芡叫 to thicken，芡水叫 a cornflour slurry。', example: 'Mix the cornflour with cold water first, or it’ll go lumpy.', exampleZh: '太白粉要先用冷水調開，不然會結塊。' },
+        { en: 'to marinate', zh: '醃漬', art: '🥣', note: '醃料叫 marinade（名詞）；醃肉常配 cornflour 與蛋白，叫 velveting（上漿）。', example: 'Marinate the beef with cornflour — that’s how they get it so tender.', exampleZh: '牛肉用太白粉上漿——餐廳的肉就是這樣變嫩的。' },
+        { en: 'umami', zh: '鮮味', art: '😋', note: '第五味，源自日文；醬油、味噌、蠔油、香菇都是 umami 的來源。', example: 'Dried shiitake add a huge hit of umami.', exampleZh: '乾香菇能帶來大量的鮮味。' }
+      ]
+    },
+    {
+      id: 'asian-dry',
+      icon: '🍜',
+      title: 'Asian Supermarket — Rice, Noodles & Dry Goods',
+      titleZh: '亞洲超市・米麵乾貨',
+      blurb: '米、麵、乾貨的英文名，還有怎麼跟店員形容你要哪一種。',
+      items: [
+        { en: 'jasmine rice', zh: '茉莉香米（泰國香米）', art: 'ricebag', note: '長粒帶香氣，泰式與中式配菜的標準；英國超市大包裝最划算。', example: 'A ten-kilo bag of jasmine rice works out much cheaper.', exampleZh: '買十公斤裝的香米划算很多。' },
+        { en: 'glutinous rice', zh: '糯米', art: 'ricebag', note: '也叫 sticky rice；粽子、油飯用，煮前要泡水。', example: 'Glutinous rice needs soaking for a few hours first.', exampleZh: '糯米要先泡水幾個小時。' },
+        { en: 'short-grain rice', zh: '短粒米／壽司米', art: 'ricebag', note: '日式飯用，黏度高；標 sushi rice 或 Japanese short grain。', example: 'Short-grain rice clumps together, which is what you want for sushi.', exampleZh: '短粒米會黏成團，做壽司就是要這樣。' },
+        { en: 'rice noodles', zh: '米粉／河粉', art: 'ricenoodles', note: '寬的叫 flat rice noodles（河粉），細的叫 rice vermicelli（米粉）。', example: 'Flat rice noodles for pad thai, vermicelli for soup.', exampleZh: '河粉做泰式炒麵，細米粉煮湯。' },
+        { en: 'glass noodles', zh: '冬粉', art: 'glassnoodles', note: '綠豆或地瓜澱粉做的透明細絲，也叫 cellophane noodles 或 mung bean vermicelli。', example: 'Glass noodles turn see-through once they’re soaked.', exampleZh: '冬粉泡開之後會變透明。' },
+        { en: 'udon noodles', zh: '烏龍麵', art: 'udon', note: '粗白的日式小麥麵，冷藏真空包（fresh udon）口感最好。', example: 'Fresh udon is far better than the dried stuff.', exampleZh: '生鮮烏龍麵比乾燥的好吃太多。' },
+        { en: 'ramen noodles', zh: '拉麵', art: 'udon', note: '鹼水麵，有彈性；泡麵叫 instant noodles 或 pot noodle（英式杯麵品牌名）。', example: 'Proper ramen noodles have a springy bite to them.', exampleZh: '真正的拉麵吃起來很有彈性。' },
+        { en: 'soba noodles', zh: '蕎麥麵', art: 'udon', note: '蕎麥製，顏色偏灰褐，冷食沾醬吃最常見。', example: 'Cold soba with dipping sauce in summer.', exampleZh: '夏天吃冷蕎麥麵配沾醬。' },
+        { en: 'dried shiitake mushrooms', zh: '乾香菇', art: 'shiitake', note: '泡發的水（soaking liquid）別倒掉，是天然高湯。', example: 'Save the soaking liquid — it’s liquid gold.', exampleZh: '泡香菇的水留著，那是精華。' },
+        { en: 'wood ear fungus', zh: '黑木耳', art: 'woodear', note: '乾燥的一小片泡水後會膨脹好幾倍，口感脆脆的；也叫 black fungus。', example: 'A handful of dried wood ear swells up enormously.', exampleZh: '一小把乾木耳泡開會膨脹超多。' },
+        { en: 'dried shrimp', zh: '蝦米', art: '🦐', note: '小小的橘色乾蝦，爆香用，鮮味非常強。', example: 'Dried shrimp pack an enormous amount of flavour.', exampleZh: '蝦米的味道非常濃。' },
+        { en: 'nori', zh: '海苔片', art: 'nori', note: '壽司用的薄片；調味過的零食叫 seasoned seaweed snacks。', example: 'Toast the nori briefly to bring the aroma back.', exampleZh: '海苔稍微烤一下香氣會回來。' },
+        { en: 'kombu', zh: '昆布', art: 'nori', note: '厚片乾海帶，日式高湯（dashi）的基底；煮前用濕布擦，別洗掉白粉。', example: 'Don’t wash the white powder off the kombu — that’s the flavour.', exampleZh: '昆布上的白粉別洗掉，那就是鮮味。' },
+        { en: 'bonito flakes', zh: '柴魚片', art: '🐟', note: '日文叫 katsuobushi，遇熱會飄動；和昆布一起煮成 dashi。', example: 'The bonito flakes dance about when they hit the hot stock.', exampleZh: '柴魚片碰到熱高湯會整個舞動起來。' },
+        { en: 'rice paper', zh: '米紙（春捲皮）', art: 'springrollwrapper', note: '越南生春捲用，泡溫水幾秒就軟；不要泡太久會黏成一團。', example: 'Dip the rice paper for three seconds, no more.', exampleZh: '米紙泡三秒就好，不要再久。' },
+        { en: 'tapioca pearls', zh: '粉圓／珍珠', art: '🧋', note: '珍珠奶茶叫 bubble tea 或 boba；煮好要泡糖水。', example: 'The pearls need twenty minutes and then a sugar syrup soak.', exampleZh: '珍珠要煮二十分鐘再泡糖水。' },
+        { en: 'seaweed snacks', zh: '海苔零食', art: 'nori', note: '一小包一小包的調味海苔，英國小孩午餐盒的熱門品項。', example: 'Seaweed snacks disappear the second you open the pack.', exampleZh: '海苔零食一開封就沒了。' }
+      ]
+    },
+    {
+      id: 'asian-fresh',
+      icon: '🥟',
+      title: 'Asian Supermarket — Fresh & Frozen',
+      titleZh: '亞洲超市・生鮮冷凍',
+      blurb: '豆腐、亞洲蔬菜與冷凍櫃裡的餃子、皮蛋與魚丸。',
+      items: [
+        { en: 'firm tofu', zh: '板豆腐', art: 'tofu', note: '硬豆腐，煎炒不易散；用前先壓水（to press the tofu）。', example: 'Press the firm tofu for half an hour before frying.', exampleZh: '板豆腐煎之前先壓水半小時。' },
+        { en: 'silken tofu', zh: '嫩豆腐／絹豆腐', art: 'tofu', note: '極嫩、易碎，麻婆豆腐與味噌湯用；動作要輕（handle it gently）。', example: 'Silken tofu falls apart if you stir too hard.', exampleZh: '嫩豆腐攪太用力就散了。' },
+        { en: 'tofu puffs', zh: '油豆腐／豆泡', art: 'tofu', note: '炸過的中空豆腐塊，會吸湯汁，火鍋與滷味必備。', example: 'Tofu puffs soak up the broth like sponges.', exampleZh: '油豆腐像海綿一樣吸滿湯汁。' },
+        { en: 'bean sprouts', zh: '豆芽菜', art: 'beansprouts', note: '綠豆芽，非常不耐放；快炒最後三十秒才下。', example: 'Bean sprouts go in for the last thirty seconds only.', exampleZh: '豆芽菜最後三十秒才下鍋。' },
+        { en: 'choi sum', zh: '菜心／油菜', art: 'pakchoi', note: '細長莖帶小黃花，燙過淋蠔油是廣式吃法。', example: 'Choi sum, blanched, with oyster sauce over the top.', exampleZh: '菜心燙過，上面淋蠔油。' },
+        { en: 'water spinach', zh: '空心菜', art: 'watercress', note: '也叫 morning glory 或 ong choy；中空的莖，大火快炒配蒜和辣椒。', example: 'Water spinach needs the hottest wok you can manage.', exampleZh: '空心菜要用你能燒到最熱的鍋炒。' },
+        { en: 'Chinese chives', zh: '韭菜', art: 'springonion', note: '扁葉、蒜香重；開花的叫 flowering chives（韭菜花）。', example: 'Chinese chives are much stronger than the herb kind.', exampleZh: '韭菜比香草類的細香蔥味道重得多。' },
+        { en: 'daikon', zh: '白蘿蔔', art: 'daikon', note: '英國超市也標 mooli；燉湯、醃漬、煮關東煮都用。', example: 'Daikon goes sweet and translucent once it’s simmered.', exampleZh: '白蘿蔔燉過會變甜、變透明。' },
+        { en: 'lotus root', zh: '蓮藕', art: 'lotusroot', note: '切開有漂亮的孔洞斷面；口感脆，燉湯或涼拌。', example: 'Sliced lotus root has that lovely lacy pattern.', exampleZh: '蓮藕切片有那個漂亮的孔洞花紋。' },
+        { en: 'taro', zh: '芋頭', art: 'taro', note: '削皮時黏液會讓手癢，建議戴手套（wear gloves）；一定要煮熟。', example: 'Wear gloves peeling taro or your hands will itch.', exampleZh: '削芋頭要戴手套，不然手會癢。' },
+        { en: 'water chestnuts', zh: '荸薺／馬蹄', art: '🌰', note: '煮再久都保持爽脆，罐頭與新鮮的都有賣。', example: 'Water chestnuts stay crunchy no matter how long you cook them.', exampleZh: '荸薺不管煮多久都還是脆的。' },
+        { en: 'bamboo shoots', zh: '竹筍', art: 'bambooshoot', note: '罐頭的要先汆燙去味；新鮮帶殼的叫 fresh bamboo shoots。', example: 'Blanch tinned bamboo shoots first to get rid of the tinny taste.', exampleZh: '罐頭竹筍先燙過去掉鐵罐味。' },
+        { en: 'lemongrass', zh: '香茅', art: 'lemongrass', note: '外層太硬要剝掉，只用下段；拍扁（bash it）香味才出得來。', example: 'Bash the lemongrass with the back of a knife first.', exampleZh: '香茅先用刀背拍扁。' },
+        { en: 'galangal', zh: '南薑', art: 'ginger', note: '長得像薑但更硬、帶松木香，泰式冬蔭功必備，不能用薑代替。', example: 'Galangal looks like ginger but tastes nothing like it.', exampleZh: '南薑長得像薑，但味道完全不同。' },
+        { en: 'kaffir lime leaves', zh: '泰國檸檬葉', art: '🍃', note: '雙葉形，撕開才會出香；冷凍保存最好。', example: 'Tear the lime leaves to release the oils.', exampleZh: '檸檬葉要撕開香氣才會出來。' },
+        { en: 'Thai basil', zh: '九層塔／打拋葉', art: '🌿', note: '莖偏紫、帶八角香，和義式甜羅勒完全不同。', example: 'Thai basil has an aniseed note Italian basil doesn’t.', exampleZh: '九層塔帶有義大利羅勒沒有的八角香。' },
+        { en: 'coriander', zh: '香菜', art: '🌿', note: '英式叫 coriander，美式叫 cilantro；根部（coriander roots）泰式咖哩醬會用。', example: 'Coriander in the UK, cilantro in the US — same plant.', exampleZh: '英國叫 coriander，美國叫 cilantro，是同一種。' },
+        { en: 'frozen dumplings', zh: '冷凍水餃', art: 'dumpling', note: '不用解凍直接下鍋；煎的叫 potstickers 或 gyoza，蒸的叫 steamed dumplings。', example: 'Straight from frozen into the pan — don’t defrost them.', exampleZh: '從冷凍直接下鍋，不要解凍。' },
+        { en: 'wonton wrappers', zh: '餛飩皮', art: 'springrollwrapper', note: '正方形薄皮，冷凍區買；用不完可以再冷凍。', example: 'Keep the wonton wrappers under a damp cloth so they don’t dry out.', exampleZh: '餛飩皮要蓋濕布，不然會乾掉。' },
+        { en: 'spring roll wrappers', zh: '春捲皮', art: 'springrollwrapper', note: '比餛飩皮大且薄；和越南米紙（rice paper）是不同東西。', example: 'Spring roll wrappers are for frying; rice paper isn’t.', exampleZh: '春捲皮是拿來炸的，米紙不是。' },
+        { en: 'century egg', zh: '皮蛋', art: 'centuryegg', note: '也叫 thousand-year egg；蛋白呈半透明琥珀色，配瘦肉粥。', example: 'Century egg is nothing like as scary as it looks.', exampleZh: '皮蛋沒有看起來那麼可怕。' },
+        { en: 'salted duck egg', zh: '鹹鴨蛋', art: '🥚', note: '蛋黃是重點——油潤鹹香，月餅與粽子的內餡。', example: 'It’s the yolk you want — rich, salty and golden.', exampleZh: '重點是蛋黃——油潤、鹹香、金黃。' },
+        { en: 'fish balls', zh: '魚丸', art: 'fishball', note: '冷凍櫃常見，火鍋與湯麵用；還有 fish cake（甜不辣類）。', example: 'Fish balls go in frozen and float when they’re done.', exampleZh: '魚丸冷凍下鍋，浮起來就熟了。' },
+        { en: 'rice cakes', zh: '年糕（韓式條狀）', art: '🍡', note: '韓式辣炒年糕叫 tteokbokki；中式寧波年糕是片狀（sliced rice cake）。', example: 'Soak the rice cakes if they’ve been in the fridge.', exampleZh: '年糕如果冰過要先泡水。' }
+      ]
+    }
   ]
 }

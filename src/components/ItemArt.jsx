@@ -1,8 +1,9 @@
 import { VEG } from './art/veg'
 import { KIT } from './art/kit'
 import { HOME } from './art/home'
+import { LIFE } from './art/life'
 
-const ICONS = { ...VEG, ...KIT, ...HOME }
+const ICONS = { ...VEG, ...KIT, ...HOME, ...LIFE }
 
 // Renders the little picture on a themed vocabulary card. `art` is either an
 // icon key from one of the SVG sets, or an emoji character used as-is.
