@@ -2,6 +2,7 @@ import { LEVELS, VOCAB } from '../data/vocabulary'
 import { SITUATIONS } from '../data/situations'
 import { ALL_IDIOMS } from '../data/idioms'
 import { LISTENING_TESTS, SPEAKING_TESTS } from '../data/ielts'
+import { THEME_AREAS, THEME_ITEM_COUNT } from '../data/themes'
 
 // Learning map: shows the B2 → C1 → C2 pathway and quick links to every unit.
 export default function Home({ go, starCount }) {
@@ -17,7 +18,7 @@ export default function Home({ go, starCount }) {
       <div className="grid cols-3" style={{ marginBottom: 28 }}>
         <div className="card"><div className="muted">收錄單字</div><div className="stat-big">{totalWords}</div><div className="muted">B2 / C1 / C2 三級</div></div>
         <div className="card"><div className="muted">我的收藏</div><div className="stat-big">{starCount}</div><div className="muted">可針對收藏單字考試</div></div>
-        <div className="card"><div className="muted">情境與道地用法</div><div className="stat-big">{SITUATIONS.length + 3}</div><div className="muted">英式口語會話與慣用語</div></div>
+        <div className="card"><div className="muted">主題單字</div><div className="stat-big">{THEME_ITEM_COUNT}</div><div className="muted">{THEME_AREAS.map((a) => a.titleZh).join(' · ')}</div></div>
       </div>
 
       <h3 style={{ marginBottom: 16 }}>📍 詞彙進階路線</h3>
@@ -45,7 +46,8 @@ export default function Home({ go, starCount }) {
         <UnitCard icon="🎧" title="雅思聽力" desc={`${LISTENING_TESTS.length} 套模擬聽力`} onClick={() => go('listening')} />
         <UnitCard icon="🗣️" title="雅思口說" desc={`Part 1–3，共 ${SPEAKING_TESTS.length} 組`} onClick={() => go('speaking')} />
         <UnitCard icon="⌨️" title="英文聽打" desc="YouTube 影片一句一句聽打、即時批改" onClick={() => go('dictation')} />
-        <UnitCard icon="💬" title="英文情境" desc="股票 / 抱怨 / 運動，多角色對話" onClick={() => go('situations')} />
+        <UnitCard icon="🛒" title="主題單字" desc={`超市 / 廚房 / IKEA，共 ${THEME_ITEM_COUNT} 個情境單字`} onClick={() => go('themes')} />
+        <UnitCard icon="💬" title="英文情境" desc={`${SITUATIONS.length} 個主題的多角色對話`} onClick={() => go('situations')} />
         <UnitCard icon="🇬🇧" title="道地英語用法" desc={`${ALL_IDIOMS.length} 個英式慣用語與片語`} onClick={() => go('idioms')} />
         <UnitCard icon="⚙️" title="發音設定" desc="挑選男聲／女聲與例句語速" onClick={() => go('settings')} />
       </div>

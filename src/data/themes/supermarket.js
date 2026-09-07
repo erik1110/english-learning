@@ -1,0 +1,270 @@
+// 超市區 · The Supermarket — themed vocabulary for a British supermarket run.
+// Each item: { en, zh, art, note, example, exampleZh }
+//   art  — an icon key handled by <ItemArt> (SVG), or an emoji character.
+//   note — 中文用法／文化提示（英國賣場實際會看到的說法）
+// Meat sections carry a `chart` key so the page can draw a butcher's diagram,
+// and each meat item's `cut` id highlights the matching region on that diagram.
+
+export const SUPERMARKET = {
+  id: 'supermarket',
+  icon: '🛒',
+  title: 'The Supermarket',
+  titleZh: '超市區',
+  blurb: '逛英國超市會看到的蔬果、肉品部位、海鮮與貨架用語，含屠體部位圖。',
+  sections: [
+    {
+      id: 'veg-roots',
+      icon: '🥕',
+      title: 'Root Vegetables',
+      titleZh: '根莖類蔬菜',
+      blurb: '英國冬天的主力：烤箱一丟就是一盤 roast veg。',
+      items: [
+        { en: 'carrot', zh: '紅蘿蔔', art: 'carrot', note: '整根賣的叫 loose carrots，袋裝的叫 a bag of carrots；小的叫 Chantenay carrots。', example: 'Could you grab a bag of carrots while you’re in the veg aisle?', exampleZh: '你在蔬菜區的時候可以順手拿一袋紅蘿蔔嗎？' },
+        { en: 'parsnip', zh: '歐防風（白色甜根莖）', art: 'parsnip', note: '長得像白色紅蘿蔔但更甜，是英國聖誕烤盤的必備，台灣少見。', example: 'Roast parsnips with honey are the best bit of Christmas dinner.', exampleZh: '蜂蜜烤歐防風是聖誕大餐裡最棒的一道。' },
+        { en: 'swede', zh: '蕪菁甘藍', art: 'swede', note: '紫黃色大圓根，蘇格蘭 haggis 旁邊的 “neeps” 就是它；美式英語叫 rutabaga。', example: 'Mash the swede with plenty of butter and black pepper.', exampleZh: '把蕪菁甘藍搗成泥，加大量奶油和黑胡椒。' },
+        { en: 'turnip', zh: '蕪菁', art: 'turnip', note: '比 swede 小、白底帶紫肩，口感較辛辣。', example: 'Turnips go into the stew about halfway through.', exampleZh: '蕪菁大概燉到一半的時候再下鍋。' },
+        { en: 'celeriac', zh: '根芹菜', art: 'celeriac', note: '外表醜、坑坑疤疤的球根，有濃芹菜香，做 remoulade 或濃湯。', example: 'Celeriac looks horrible but makes a lovely creamy soup.', exampleZh: '根芹菜長得很醜，但煮成濃湯超好喝。' },
+        { en: 'beetroot', zh: '甜菜根', art: 'beetroot', note: '英國常見「已煮熟真空包」的 cooked beetroot，直接切了就能吃。', example: 'I bought a pack of cooked beetroot for the salad.', exampleZh: '我買了一包煮好的甜菜根做沙拉。' },
+        { en: 'potato', zh: '馬鈴薯', art: 'potato', note: '英國超市會標用途：Maris Piper 適合炸薯條、King Edward 適合搗泥。', example: 'Maris Piper are the ones you want for proper chips.', exampleZh: '要做道地薯條就要用 Maris Piper 這個品種。' },
+        { en: 'new potatoes', zh: '新馬鈴薯（小顆嫩皮）', art: 'newpotato', note: '皮薄不用削，水煮拌奶油薄荷是英國夏天的吃法；Jersey Royals 是名品。', example: 'New potatoes with butter and mint — can’t beat it.', exampleZh: '新馬鈴薯配奶油和薄荷——無敵。' },
+        { en: 'sweet potato', zh: '地瓜', art: 'sweetpotato', note: '英國的地瓜多是橘肉品種，比台灣的紅心地瓜濕潤。', example: 'Sweet potato wedges take about forty minutes in the oven.', exampleZh: '地瓜角在烤箱裡大概要烤四十分鐘。' },
+        { en: 'radish', zh: '櫻桃蘿蔔', art: 'radish', note: '小顆紅皮白肉，生吃辛辣爽脆，通常一小把 a bunch of radishes。', example: 'Sliced radish adds a nice bit of bite to a salad.', exampleZh: '切片的櫻桃蘿蔔能讓沙拉多一點嗆脆感。' },
+        { en: 'ginger', zh: '薑', art: 'ginger', note: '一整塊叫 a knob of ginger（一小塊薑），不說 a piece 也可以但 knob 更道地。', example: 'Grate in a knob of ginger right at the end.', exampleZh: '最後再磨一小塊薑進去。' }
+      ]
+    },
+    {
+      id: 'veg-brassicas',
+      icon: '🥦',
+      title: 'Brassicas & Greens',
+      titleZh: '十字花科與葉菜',
+      blurb: '從花椰菜到抱子甘藍，英國人餐盤上的綠色部隊。',
+      items: [
+        { en: 'broccoli', zh: '青花菜', art: 'broccoli', note: '不可數，說 a head of broccoli（一顆）或 some broccoli。', example: 'Steam the broccoli for four minutes, no longer.', exampleZh: '青花菜蒸四分鐘就好，不要更久。' },
+        { en: 'tenderstem broccoli', zh: '嫩莖青花菜', art: 'tenderstem', note: '細長莖的品種（美式叫 broccolini），英國超市很常見，適合快炒。', example: 'Tenderstem broccoli is lovely charred in a griddle pan.', exampleZh: '嫩莖青花菜用條紋鍋煎到焦香非常好吃。' },
+        { en: 'cauliflower', zh: '白花椰菜', art: 'cauliflower', note: 'cauliflower cheese（白醬焗花椰菜）是英國經典配菜。', example: 'We’re having cauliflower cheese with the roast.', exampleZh: '我們烤肉大餐要配白醬焗花椰菜。' },
+        { en: 'Brussels sprouts', zh: '抱子甘藍', art: 'sprouts', note: '一定用複數；英國人聖誕節必吃，但也是最常被嫌棄的蔬菜。', example: 'Fry the sprouts with bacon and nobody complains.', exampleZh: '把抱子甘藍和培根一起炒，就沒人抱怨了。' },
+        { en: 'savoy cabbage', zh: '皺葉甘藍', art: 'savoy', note: '葉子皺皺捲捲、深綠色，比一般高麗菜耐煮。', example: 'Shred the savoy cabbage finely and steam it.', exampleZh: '把皺葉甘藍切細絲再蒸。' },
+        { en: 'red cabbage', zh: '紫甘藍', art: 'redcabbage', note: '英國常做成 braised red cabbage（紅酒醋燉紫甘藍）配烤肉。', example: 'Braised red cabbage goes brilliantly with pork.', exampleZh: '燉紫甘藍配豬肉非常搭。' },
+        { en: 'spring greens', zh: '春季甘藍嫩葉', art: 'springgreens', note: '未結球的甘藍嫩葉，口感軟嫩，常見於春天。', example: 'Spring greens just need a quick wilt in the pan.', exampleZh: '甘藍嫩葉在鍋裡稍微炒軟就好。' },
+        { en: 'kale', zh: '羽衣甘藍', art: 'kale', note: 'curly kale（捲葉）和 cavolo nero（黑葉甘藍）是兩種常見選擇。', example: 'Massage the kale with oil before you roast it.', exampleZh: '烤羽衣甘藍前先用油把葉子搓軟。' },
+        { en: 'pak choi', zh: '青江菜', art: 'pakchoi', note: '英國拼作 pak choi，美國拼 bok choy，在超市的 world foods 區。', example: 'Halve the pak choi and stir-fry it with garlic.', exampleZh: '青江菜對半切，用蒜頭快炒。' },
+        { en: 'spinach', zh: '菠菜', art: 'spinach', note: '袋裝的叫 baby leaf spinach，可生食；一大袋炒完只剩一小坨。', example: 'A whole bag of spinach wilts down to nothing.', exampleZh: '一整袋菠菜炒完縮到幾乎沒剩。' },
+        { en: 'rocket', zh: '芝麻葉', art: 'rocket', note: '英式叫 rocket，美式叫 arugula；帶胡椒辛辣味。', example: 'Top the pizza with rocket and shaved parmesan.', exampleZh: '披薩上鋪芝麻葉和帕瑪森起司刨片。' },
+        { en: 'watercress', zh: '西洋菜／豆瓣菜', art: 'watercress', note: '英國傳統沙拉葉，帶芥末辛味，也常煮成濃湯。', example: 'Watercress soup is peppery and bright green.', exampleZh: '西洋菜濃湯帶辛香味，顏色鮮綠。' },
+        { en: 'little gem lettuce', zh: '小寶石萵苣', art: 'lettuce', note: '小顆結實的長葉萵苣，兩顆一組賣，做凱薩沙拉最好。', example: 'Two little gems, quartered, straight on the barbecue.', exampleZh: '兩顆小寶石萵苣切四瓣，直接上烤肉架。' }
+      ]
+    },
+    {
+      id: 'veg-others',
+      icon: '🍆',
+      title: 'Fruiting Veg, Pods & Stalks',
+      titleZh: '果菜、豆莢與莖菜',
+      blurb: '茄科、豆莢與蔥屬——英國食譜出現頻率最高的那批。',
+      items: [
+        { en: 'courgette', zh: '櫛瓜', art: 'courgette', note: '英式叫 courgette（源自法文），美式叫 zucchini，看食譜要會換。', example: 'Slice the courgette into ribbons with a peeler.', exampleZh: '用削皮刀把櫛瓜削成長薄片。' },
+        { en: 'aubergine', zh: '茄子', art: 'aubergine', note: '英式 aubergine，美式 eggplant；英國的是胖胖的紫色品種。', example: 'Salt the aubergine first to draw out the bitterness.', exampleZh: '茄子先撒鹽把苦水逼出來。' },
+        { en: 'butternut squash', zh: '奶油南瓜', art: 'squash', note: '葫蘆形、橘肉，秋冬濃湯主角；整顆賣或切塊真空包。', example: 'Roast butternut squash with chilli and feta.', exampleZh: '奶油南瓜配辣椒和菲達起司一起烤。' },
+        { en: 'pepper', zh: '甜椒', art: 'pepper', note: '英式就叫 pepper（red/green/yellow pepper），美式才叫 bell pepper。', example: 'A mixed pack of peppers is usually better value.', exampleZh: '綜合甜椒的包裝通常比較划算。' },
+        { en: 'chilli', zh: '辣椒', art: 'chilli', note: '英式拼 chilli（雙 l），美式 chili；bird’s eye 最辣，Scotch bonnet 更兇。', example: 'Deseed the chilli if you don’t want it too hot.', exampleZh: '不想太辣的話就把辣椒籽去掉。' },
+        { en: 'cucumber', zh: '大黃瓜', art: 'cucumber', note: '英國的 cucumber 又長又粗、包塑膠膜；台灣小黃瓜在這裡是 baby cucumber。', example: 'Half a cucumber, sliced, for the sandwiches.', exampleZh: '半條黃瓜切片，做三明治用。' },
+        { en: 'vine tomatoes', zh: '整串番茄', art: 'tomato', note: '連著藤蔓賣（on the vine），香氣比散裝的重。', example: 'Vine tomatoes smell much better than the loose ones.', exampleZh: '整串的番茄比散裝的香多了。' },
+        { en: 'cherry tomatoes', zh: '小番茄', art: 'cherrytomato', note: '一盒叫 a punnet of cherry tomatoes（punnet = 小塑膠盒）。', example: 'Roast a punnet of cherry tomatoes until they burst.', exampleZh: '把一盒小番茄烤到爆開。' },
+        { en: 'sweetcorn', zh: '玉米', art: 'sweetcorn', note: '整支叫 corn on the cob，罐頭玉米粒叫 tinned sweetcorn。', example: 'Two corn on the cob, please — they’re on the barbecue.', exampleZh: '請給我兩支玉米——要烤肉用的。' },
+        { en: 'green beans', zh: '四季豆', art: 'greenbeans', note: '細長的叫 fine green beans，法式叫 haricots verts。', example: 'Blanch the green beans and plunge them into ice water.', exampleZh: '四季豆汆燙後立刻冰鎮。' },
+        { en: 'runner beans', zh: '花豆莢（寬扁豆莢）', art: 'runnerbeans', note: '扁而寬、有筋要撕掉，是英國家庭菜園的招牌作物。', example: 'You have to string runner beans before you slice them.', exampleZh: '花豆莢切之前一定要先去筋。' },
+        { en: 'mangetout', zh: '甜豆莢（荷蘭豆）', art: 'mangetout', note: '法文「整個吃」的意思，扁平連莢吃；美式叫 snow peas。', example: 'Chuck the mangetout in for the last minute.', exampleZh: '甜豆莢最後一分鐘再丟進去。' },
+        { en: 'sugar snap peas', zh: '蜜糖豌豆', art: 'sugarsnap', note: '比 mangetout 圓胖飽滿，更脆更甜，可生吃。', example: 'The kids eat sugar snap peas raw like sweets.', exampleZh: '小孩把蜜糖豌豆當糖果一樣生吃。' },
+        { en: 'broad beans', zh: '蠶豆', art: 'broadbeans', note: '英國春末的時令豆，燙過要剝掉外層薄膜（double-podding）。', example: 'Broad beans are worth double-podding, honestly.', exampleZh: '說真的，蠶豆值得多剝一層皮。' },
+        { en: 'asparagus', zh: '蘆筍', art: 'asparagus', note: '英國產季只有五、六月，叫 British asparagus season；一把是 a bundle。', example: 'British asparagus is only around for about eight weeks.', exampleZh: '英國蘆筍一年只有大約八週。' },
+        { en: 'celery', zh: '西洋芹', art: 'celery', note: '一整把叫 a head of celery，一根叫 a stick of celery。', example: 'Two sticks of celery, finely diced, for the base.', exampleZh: '兩根西洋芹切細丁，做湯底用。' },
+        { en: 'fennel', zh: '茴香頭', art: 'fennel', note: '球狀莖，有明顯八角／甘草香，生切做沙拉或烤軟。', example: 'Shaved fennel with orange is a classic salad.', exampleZh: '茴香刨片配柳橙是經典沙拉。' },
+        { en: 'chicory', zh: '菊苣', art: 'chicory', note: '英式叫 chicory，美式叫 endive；帶苦味，適合烤或做船型盛盤。', example: 'Grill the chicory cut-side down until it caramelises.', exampleZh: '菊苣切面朝下烤到焦糖化。' },
+        { en: 'chestnut mushrooms', zh: '褐色蘑菇', art: 'mushroom', note: '比白蘑菇（button mushrooms）風味濃；大顆的叫 portobello。', example: 'Chestnut mushrooms have far more flavour than white ones.', exampleZh: '褐色蘑菇的風味比白蘑菇強多了。' },
+        { en: 'onion', zh: '洋蔥', art: 'onion', note: '一般是 brown onion；還有 red onion（生食用）與 white onion。', example: 'Sweat the onion gently for ten minutes, don’t brown it.', exampleZh: '洋蔥小火慢炒十分鐘出水，不要炒到上色。' },
+        { en: 'shallot', zh: '紅蔥頭', art: 'shallot', note: '比洋蔥小而細緻，做醬汁和油醋汁用；banana shallot 是長條品種。', example: 'Finely chopped shallot makes a much better dressing.', exampleZh: '切碎的紅蔥頭能做出好很多的油醋汁。' },
+        { en: 'spring onion', zh: '青蔥', art: 'springonion', note: '英式 spring onion，美式 scallion / green onion；一把叫 a bunch。', example: 'Scatter sliced spring onions over the top.', exampleZh: '把青蔥切片撒在上面。' },
+        { en: 'leek', zh: '韭蔥', art: 'leek', note: '威爾斯的國家象徵；沙土常卡在葉間，要縱剖沖洗乾淨。', example: 'Split the leek lengthways and wash out the grit.', exampleZh: '把韭蔥縱向剖開，把裡面的沙沖乾淨。' },
+        { en: 'garlic', zh: '大蒜', art: 'garlic', note: '整顆叫 a bulb of garlic，一瓣叫 a clove of garlic，量詞別搞混。', example: 'Three cloves of garlic, crushed with the flat of the knife.', exampleZh: '三瓣大蒜，用刀面拍碎。' }
+      ]
+    }
+,
+    {
+      id: 'meat-pork',
+      icon: '🐖',
+      title: 'Pork — Cut by Cut',
+      titleZh: '豬肉部位',
+      blurb: '從五花、梅花到豬腱與豬蹄，點卡片看部位在豬身上的位置。',
+      chart: 'pig',
+      items: [
+        { en: 'pork belly', zh: '五花肉', cut: 'belly', note: '肥瘦相間的腹部肉。英國超市多是整塊帶皮的 belly joint，或切條的 belly slices；烤到皮酥叫 crackling。', example: 'Score the skin on the pork belly so it crisps up properly.', exampleZh: '在五花肉皮上劃刀，這樣才會烤得酥脆。' },
+        { en: 'pork shoulder', zh: '梅花肉／胛心肉', cut: 'shoulder', note: '油花多、耐久燉，是 pulled pork（手撕豬肉）的標準部位；也叫 pork butt 或 Boston butt（美式）。', example: 'Slow-roast the pork shoulder for six hours and it’ll pull apart.', exampleZh: '豬肩肉低溫烤六小時就能輕鬆撕開。' },
+        { en: 'pork collar', zh: '豬頸肉／松阪的一部分', cut: 'shoulder', note: '肩頸交界處的細嫩肉，油花如大理石，適合炭烤或煎；英國肉舖叫 collar 或 neck end。', example: 'Ask the butcher for pork collar — it’s the best value cut going.', exampleZh: '跟肉販要豬頸肉——它是最划算的部位。' },
+        { en: 'pork loin', zh: '大里肌', cut: 'loin', note: '背脊上的長條瘦肉，油脂少、容易柴，別煮過頭；帶骨整條叫 loin joint。', example: 'Pork loin dries out fast, so take it out at 63 degrees.', exampleZh: '大里肌很容易乾柴，六十三度就要離火。' },
+        { en: 'pork tenderloin', zh: '小里肌／腰內肉', cut: 'tenderloin', note: '脊椎內側的細長條，全豬最嫩的部位，英國也叫 pork fillet。', example: 'A whole pork fillet only needs about twenty minutes.', exampleZh: '一整條小里肌只要大約二十分鐘就熟了。' },
+        { en: 'pork chop', zh: '帶骨豬排', cut: 'loin', note: '從里肌橫切下來的帶骨排；loin chop 帶一小條腰內肉，chump chop 靠近臀部。', example: 'Two thick-cut pork chops, please, bone in.', exampleZh: '請給我兩塊厚切帶骨豬排。' },
+        { en: 'pork leg', zh: '後腿肉', cut: 'leg', note: '瘦而大塊，常整塊烤（leg joint）或做成火腿；醃過生的叫 gammon，煮熟切片的叫 ham。', example: 'A leg of pork will feed the whole family twice over.', exampleZh: '一支豬後腿夠全家人吃兩輪。' },
+        { en: 'pork hock / knuckle', zh: '蹄膀／腿庫', cut: 'hock', note: '小腿上段連皮帶筋的粗壯部位，德式豬腳就是它；英國叫 hock 或 knuckle，燉到膠質軟糯。', example: 'A smoked pork hock makes an incredible pea soup.', exampleZh: '一隻煙燻蹄膀能煮出超讚的豌豆湯。' },
+        { en: 'pork shank', zh: '豬腱', cut: 'hock', note: '小腿的肌肉束，筋多肉緊實，滷過切片斷面有漂亮的筋花；英國肉舖常和 hock 混用。', example: 'Braised pork shank falls off the bone after three hours.', exampleZh: '豬腱燉三小時就會骨肉分離。' },
+        { en: 'pig’s trotter', zh: '豬蹄／豬腳', cut: 'trotter', note: '腳掌部分，幾乎全是皮、筋與膠質。英國多用來熬膠質豐富的高湯，中式滷或麻油煮則直接吃。', example: 'Chefs add a pig’s trotter to stock for extra body.', exampleZh: '廚師會丟一隻豬蹄進高湯增加膠質濃度。' },
+        { en: 'spare ribs', zh: '排骨（腹側肋排）', cut: 'ribs', note: '靠腹部的肋排，肉厚帶油；英國 BBQ 常見 rack of ribs 整排賣。', example: 'Sticky spare ribs need a low oven and a lot of patience.', exampleZh: '蜜汁排骨需要低溫烤箱和很多耐心。' },
+        { en: 'baby back ribs', zh: '小肋排（背脊肋排）', cut: 'ribs', note: '靠背脊的肋排，較短、肉較瘦嫩，價格通常高於 spare ribs。', example: 'Baby back ribs cook quicker than spare ribs.', exampleZh: '小肋排比腹側排骨熟得快。' },
+        { en: 'pork cheek', zh: '豬頰肉', cut: 'cheek', note: '嘴邊肉，運動量大、結締組織多，燉後極軟；英國肉舖便宜但要預訂。', example: 'Pork cheeks are cheap as chips and melt when braised.', exampleZh: '豬頰肉超便宜，燉過會化在嘴裡。' },
+        { en: 'minced pork', zh: '豬絞肉', cut: 'shoulder', note: '英式 mince，美式 ground pork；標示的 % 是脂肪比例，20% 做肉丸最香。', example: 'Get the twenty percent fat mince for meatballs.', exampleZh: '做肉丸要買脂肪含量百分之二十的絞肉。' },
+        { en: 'streaky bacon', zh: '五花培根', cut: 'belly', note: '取自五花，肥瘦相間，煎到脆；美式培根幾乎都是這種。', example: 'Streaky bacon crisps up much better than back bacon.', exampleZh: '五花培根比背肌培根煎得脆多了。' },
+        { en: 'back bacon', zh: '背肌培根', cut: 'loin', note: '取自里肌，大片瘦肉帶一圈脂肪邊，是英式早餐與 bacon sarnie 的標配。', example: 'A proper bacon sarnie has to be back bacon.', exampleZh: '正統的培根三明治一定要用背肌培根。' },
+        { en: 'lardons', zh: '培根丁／條', cut: 'belly', note: '切成小條的鹹豬肉丁，法式料理用來爆香；英國超市有現成小包裝。', example: 'Fry the lardons until the fat runs, then add the onion.', exampleZh: '把培根丁煎到出油，再下洋蔥。' },
+        { en: 'gammon steak', zh: '醃豬腿排', cut: 'leg', note: '醃漬過的生後腿肉切片，英式酒吧會配鳳梨圈和薯條。', example: 'Gammon, egg and chips is proper pub grub.', exampleZh: '醃豬腿排配蛋和薯條是道地的酒吧料理。' },
+        { en: 'pork crackling', zh: '脆豬皮', cut: 'belly', note: '烤到爆開的豬皮，英國人烤肉大餐的靈魂；抹鹽、皮要乾才會脆。', example: 'The crackling is the bit everyone fights over.', exampleZh: '脆豬皮是大家搶著吃的部分。' },
+        { en: 'pig’s liver', zh: '豬肝', cut: 'offal', note: '內臟統稱 offal；英國常見 liver and onions（洋蔥燴肝）這道老菜。', example: 'Soak the liver in milk first to mellow the flavour.', exampleZh: '豬肝先泡牛奶可以讓味道溫和一點。' }
+      ]
+    },
+    {
+      id: 'meat-beef',
+      icon: '🐄',
+      title: 'Beef — Cut by Cut',
+      titleZh: '牛肉部位',
+      blurb: '牛腱、牛腩、肋眼與菲力：哪裡該煎、哪裡該燉。',
+      chart: 'cow',
+      items: [
+        { en: 'beef shin', zh: '牛腱', cut: 'shin', note: '小腿肉，筋多膠質厚，久燉最香；義式 osso buco 就是帶骨橫切的小牛腱。', example: 'Beef shin is the only cut I use for a proper stew.', exampleZh: '燉牛肉我只用牛腱這個部位。' },
+        { en: 'brisket', zh: '牛腩／胸腹肉', cut: 'brisket', note: '前胸厚肉，纖維粗、油脂足，是美式煙燻與中式紅燒的主角。', example: 'Smoked brisket takes twelve hours and it’s worth every one.', exampleZh: '煙燻牛胸肉要花十二小時，但每一分鐘都值得。' },
+        { en: 'chuck', zh: '肩胛肉', cut: 'chuck', note: '肩部大塊肉，油花均勻、風味濃，做漢堡絞肉與燉肉都好。', example: 'The best burgers are eighty percent chuck.', exampleZh: '最好的漢堡肉是八成的肩胛肉。' },
+        { en: 'feather blade', zh: '板腱', cut: 'chuck', note: '肩胛內側，中央一條白筋，慢燉後筋會化開；英國肉舖叫 feather blade。', example: 'Feather blade braised in red wine is restaurant-level.', exampleZh: '紅酒燉板腱有餐廳等級的水準。' },
+        { en: 'rib-eye', zh: '肋眼', cut: 'rib', note: '肋部帶油花的圓形肉眼，中心一塊 eye 加外圈 cap；油脂多、煎起來最香。', example: 'A rib-eye needs a screaming hot pan and nothing else.', exampleZh: '肋眼只需要一個燒到冒煙的鍋，其他都不用。' },
+        { en: 'sirloin', zh: '沙朗（西冷）', cut: 'sirloin', note: '腰脊肉，一側帶脂肪邊，口感比肋眼緊實；英式 roast beef 常用整條 sirloin joint。', example: 'Render the fat edge of the sirloin first, on its side.', exampleZh: '沙朗先立起來把那條肥邊煸出油。' },
+        { en: 'fillet', zh: '菲力／腰內肉', cut: 'fillet', note: '最嫩也最貴的長條瘦肉，油花少、味道淡；英式叫 fillet，美式叫 tenderloin。', example: 'Fillet is tender but sirloin has far more flavour.', exampleZh: '菲力嫩，但沙朗的味道濃多了。' },
+        { en: 'rump', zh: '臀肉', cut: 'rump', note: '臀部大肌肉，價格親民、牛味重，但要逆紋切才不老。', example: 'Rump steak has more flavour than fillet for half the price.', exampleZh: '臀肉牛排比菲力更有牛味，價格卻只有一半。' },
+        { en: 'topside', zh: '後腿內側（上臀）', cut: 'round', note: '極瘦的大塊肉，是英國週日烤肉 roast beef 的經典選擇，切薄片吃。', example: 'Topside is the traditional Sunday roasting joint.', exampleZh: '後腿內側是傳統週日烤肉的部位。' },
+        { en: 'silverside', zh: '後腿外側', cut: 'round', note: '比 topside 更瘦更緊，常拿來鹽醃做 salt beef 或慢燉。', example: 'Salt beef is made from brined silverside.', exampleZh: '鹽漬牛肉是用鹽滷過的後腿外側做的。' },
+        { en: 'short rib', zh: '牛小排（帶骨肋條）', cut: 'rib', note: '帶骨的厚肋條，油脂與筋膜豐富，燉或低溫慢烤會軟嫩多汁。', example: 'Beef short ribs need at least four hours in the oven.', exampleZh: '帶骨牛小排在烤箱裡至少要四小時。' },
+        { en: 'flank', zh: '腹脅肉', cut: 'flank', note: '腹部薄肉，纖維粗、味道濃，適合大火快煎後逆紋切薄；bavette 是法式叫法。', example: 'Slice the flank steak against the grain or it’ll be chewy.', exampleZh: '腹脅牛排要逆紋切，不然會很韌。' },
+        { en: 'oxtail', zh: '牛尾', cut: 'oxtail', note: '一節節帶骨帶筋，膠質極高，是英式 oxtail soup 與中式清燉的材料。', example: 'Oxtail makes the richest gravy you’ll ever taste.', exampleZh: '牛尾能熬出你嚐過最濃郁的肉汁。' },
+        { en: 'ox cheek', zh: '牛頰肉', cut: 'cheek', note: '結締組織極多，慢燉後化為膠質，是英國餐廳很愛用的便宜好料。', example: 'Ox cheek braised overnight is unbelievably tender.', exampleZh: '牛頰肉燉一整晚會軟嫩到不可思議。' },
+        { en: 'beef mince', zh: '牛絞肉', cut: 'chuck', note: '英式 mince；5%、12%、20% 指脂肪比例，做義大利肉醬選 12% 剛好。', example: 'Brown the mince properly — don’t just grey it.', exampleZh: '絞肉要確實煎上色，不要只是變灰。' },
+        { en: 'marrow bones', zh: '牛骨髓', cut: 'shin', note: '縱剖或橫切的腿骨，烤過挖骨髓抹吐司是倫敦名菜。', example: 'Roasted marrow bones with parsley salad and toast.', exampleZh: '烤骨髓配香芹沙拉和烤吐司。' }
+      ]
+    },
+    {
+      id: 'meat-lamb',
+      icon: '🐑',
+      title: 'Lamb — Cut by Cut',
+      titleZh: '羊肉部位',
+      blurb: '英國人最自豪的肉品，從羊腱到羊肋排。',
+      chart: 'lamb',
+      items: [
+        { en: 'lamb shank', zh: '羊腱', cut: 'shank', note: '小腿帶骨，一人一支，慢燉兩三小時肉會縮到骨頭上方，非常上相。', example: 'Slow-braised lamb shanks with rosemary and red wine.', exampleZh: '迷迭香紅酒慢燉羊腱。' },
+        { en: 'leg of lamb', zh: '羊腿', cut: 'leg', note: '整支帶骨烤是英國復活節傳統；去骨攤平的叫 butterflied leg，適合炭烤。', example: 'A butterflied leg of lamb cooks in half the time.', exampleZh: '去骨攤平的羊腿烤起來只要一半時間。' },
+        { en: 'shoulder of lamb', zh: '羊肩', cut: 'shoulder', note: '油花比羊腿多，久烤後可以用叉子撕開，比腿肉不容易失敗。', example: 'Shoulder is much more forgiving than leg — you can’t overcook it.', exampleZh: '羊肩比羊腿好處理多了——幾乎烤不壞。' },
+        { en: 'rack of lamb', zh: '羊肋排', cut: 'rack', note: '整排帶骨肋排，把骨頭刮乾淨叫 French-trimmed；宴客菜首選。', example: 'A French-trimmed rack of lamb looks the part on a plate.', exampleZh: '刮淨骨頭的羊肋排擺盤起來很體面。' },
+        { en: 'lamb chops', zh: '羊排', cut: 'loin', note: 'loin chop（腰排，帶小 T 骨）與 chump chop（臀排，較大塊）是兩種常見。', example: 'Three lamb chops each, straight under the grill.', exampleZh: '每人三塊羊排，直接送進烤爐。' },
+        { en: 'neck fillet', zh: '羊頸肉條', cut: 'neck', note: '頸部去骨的長條肉，油花漂亮又便宜，切塊做咖哩或串燒。', example: 'Lamb neck fillet is the butcher’s secret bargain.', exampleZh: '羊頸肉條是肉舖裡的隱藏版便宜好料。' },
+        { en: 'breast of lamb', zh: '羊腹肉', cut: 'breast', note: '腹部薄層帶油，最便宜的部位，慢烤後壓平再煎脆。', example: 'Breast of lamb is dirt cheap and criminally underrated.', exampleZh: '羊腹肉超便宜，被嚴重低估了。' },
+      ]
+    },
+    {
+      id: 'meat-poultry',
+      icon: '🐔',
+      title: 'Poultry',
+      titleZh: '禽肉部位',
+      blurb: '全雞怎麼拆、雞鴨火雞的部位怎麼點。',
+      chart: 'chicken',
+      items: [
+        { en: 'chicken breast', zh: '雞胸', cut: 'c-breast', note: '瘦而無骨；帶翅根骨與皮的整片叫 chicken supreme，煎起來更多汁。', example: 'Ask for chicken supremes — the skin keeps them juicy.', exampleZh: '點帶皮雞胸——那層皮能鎖住肉汁。' },
+        { en: 'chicken thigh', zh: '雞腿肉（去骨大腿）', cut: 'c-thigh', note: '油脂多、久煮不柴，英國超市有 boneless skinless thighs 一大包。', example: 'Thighs beat breast for curry every single time.', exampleZh: '做咖哩用雞腿肉永遠贏過雞胸。' },
+        { en: 'drumstick', zh: '棒棒腿', cut: 'c-drum', note: '小腿帶骨，小孩最愛拿著啃；和大腿合稱 chicken legs。', example: 'Six drumsticks, marinated overnight, into the oven.', exampleZh: '六支棒棒腿，醃一晚，送進烤箱。' },
+        { en: 'chicken wings', zh: '雞翅', cut: 'c-wing', note: '分成 drumette（翅腿）、wingette / flat（翅中）與 wing tip（翅尖）。', example: 'Separate the wings into drumettes and flats first.', exampleZh: '先把雞翅分成翅腿和翅中。' },
+        { en: 'whole chicken', zh: '全雞', cut: 'c-whole', note: '英國超市標 medium / large bird；一隻大約 1.5–2 公斤，烤完骨架記得熬湯。', example: 'One large bird will do us Sunday and Monday.', exampleZh: '一隻大全雞夠我們吃週日和週一。' },
+        { en: 'chicken carcass', zh: '雞骨架', cut: 'c-whole', note: '拆完肉剩下的骨架，肉舖常免費送，是熬高湯的好料。', example: 'The butcher throws in a carcass for stock if you ask.', exampleZh: '跟肉販開口的話，他們會免費附骨架讓你熬湯。' },
+        { en: 'giblets', zh: '雞內臟包', cut: 'c-whole', note: '全雞肚裡的小袋：脖子、心、胗、肝，英國人用來煮聖誕肉汁 gravy。', example: 'Don’t bin the giblets — they make the gravy.', exampleZh: '別把內臟包丟了——肉汁全靠它。' },
+        { en: 'duck breast', zh: '鴨胸', cut: 'c-breast', note: '皮下厚脂肪要先劃刀、冷鍋下鍋慢慢煸出油才會酥。', example: 'Start the duck breast skin-side down in a cold pan.', exampleZh: '鴨胸要皮朝下、從冷鍋開始煎。' },
+        { en: 'turkey crown', zh: '火雞胸冠（去腿整胸）', cut: 'c-breast', note: '只留胸部帶骨的整塊，聖誕節小家庭很流行，比整隻好烤。', example: 'A turkey crown is far less faff than a whole bird.', exampleZh: '火雞胸冠比整隻火雞省事多了。' }
+      ]
+    },
+    {
+      id: 'fish',
+      icon: '🐟',
+      title: 'Fish & Seafood',
+      titleZh: '魚類與海鮮',
+      blurb: '魚販櫃檯（fish counter）點餐、和處理方式的說法。',
+      items: [
+        { en: 'cod', zh: '鱈魚', art: '🐟', note: '英國炸魚薯條的首選白身魚，肉片大而蓬鬆。', example: 'Cod and chips, salt and vinegar, please.', exampleZh: '請給我鱈魚薯條，加鹽和醋。' },
+        { en: 'haddock', zh: '黑線鱈', art: '🐟', note: '北方（蘇格蘭、約克夏）更愛用它炸魚；煙燻版叫 smoked haddock。', example: 'Up north it’s haddock, not cod, in the chippy.', exampleZh: '在北部炸魚店用的是黑線鱈，不是鱈魚。' },
+        { en: 'plaice', zh: '歐洲鰈魚', art: '🐟', note: '扁身魚，背上有橘點，肉細味淡，整條煎（pan-fried whole）很常見。', example: 'Whole plaice, pan-fried in butter with capers.', exampleZh: '整條鰈魚用奶油煎，配酸豆。' },
+        { en: 'mackerel', zh: '鯖魚', art: '🐟', note: '油脂高的青背魚，英國便宜又健康，煙燻版直接吃。', example: 'Smoked mackerel pâté takes about five minutes to make.', exampleZh: '煙燻鯖魚抹醬大概五分鐘就能做好。' },
+        { en: 'sea bass', zh: '鱸魚', art: '🐟', note: '英國餐廳的常客；fillet 帶皮煎到脆是標準做法。', example: 'Crisp the sea bass skin and finish it in the pan.', exampleZh: '把鱸魚皮煎脆，直接在鍋裡收尾。' },
+        { en: 'salmon fillet', zh: '鮭魚排', art: '🐟', note: 'fillet 是去骨魚片，darne / steak 是帶骨橫切；冷燻的叫 smoked salmon。', example: 'Two salmon fillets, skin on, please.', exampleZh: '請給我兩片帶皮鮭魚排。' },
+        { en: 'prawns', zh: '蝦子', art: '🦐', note: '英式 prawns，美式 shrimp；king prawns 是大蝦，還有 cooked / raw 之分。', example: 'A bag of raw king prawns from the freezer aisle.', exampleZh: '冷凍區拿一包生的大蝦。' },
+        { en: 'mussels', zh: '淡菜／孔雀蛤', art: '🦪', note: '一公斤約兩人份；煮前敲一下，不閉合的要丟掉（discard any that stay open）。', example: 'A kilo of mussels, cooked in cider and cream.', exampleZh: '一公斤淡菜，用蘋果酒和鮮奶油煮。' },
+        { en: 'scallops', zh: '干貝', art: '🦪', note: '帶橘色卵巢的叫 roe on；煎的時候一面約九十秒，別翻來翻去。', example: 'Hand-dived scallops, seared ninety seconds a side.', exampleZh: '手採干貝，一面煎九十秒。' },
+        { en: 'crab', zh: '螃蟹', art: '🦀', note: 'brown meat（蟹膏，味濃）與 white meat（蟹肉，清甜）在英國分開賣。', example: 'Dressed crab gives you both the brown and white meat.', exampleZh: '處理好的整蟹會同時附蟹膏和蟹肉。' },
+        { en: 'squid', zh: '花枝／魷魚', art: '🦑', note: '處理好的叫 cleaned squid；圈狀叫 squid rings，炸過叫 calamari。', example: 'Squid needs either two minutes or two hours, nothing between.', exampleZh: '花枝要嘛煮兩分鐘，要嘛燉兩小時，沒有中間值。' },
+        { en: 'kipper', zh: '煙燻鯡魚', art: '🐟', note: '對半剖開冷燻的鯡魚，是老派英式早餐，味道很重。', example: 'Kippers for breakfast is a very old-school British thing.', exampleZh: '早餐吃煙燻鯡魚是非常老派的英國習慣。' }
+      ]
+    },
+    {
+      id: 'dairy-bakery',
+      icon: '🧀',
+      title: 'Dairy, Eggs & Bakery',
+      titleZh: '乳製品、蛋與烘焙',
+      blurb: '牛奶的種類、英國起司，還有麵包櫃上的名字。',
+      items: [
+        { en: 'semi-skimmed milk', zh: '半脫脂牛奶', art: '🥛', note: '英國牛奶用瓶蓋顏色分：全脂藍蓋、半脫脂綠蓋、脫脂紅蓋。', example: 'Green top — that’s semi-skimmed, the one everyone buys.', exampleZh: '綠蓋就是半脫脂，大家都買這種。' },
+        { en: 'double cream', zh: '重鮮奶油（高乳脂）', art: '🥛', note: '英式 double cream 約 48% 乳脂，相當於美式 heavy cream；single cream 較稀不能打發。', example: 'Double cream whips; single cream won’t.', exampleZh: '重鮮奶油打得發，稀鮮奶油打不發。' },
+        { en: 'mature cheddar', zh: '熟成切達起司', art: '🧀', note: '英國國民起司，標 mild / mature / extra mature 代表熟成度與嗆度。', example: 'Extra mature cheddar has that lovely crumbly bite.', exampleZh: '特熟成切達有那種鬆脆易碎的口感。' },
+        { en: 'Stilton', zh: '斯蒂爾頓藍紋起司', art: '🧀', note: '英國最有名的藍紋起司，聖誕節配波特酒；氣味強烈。', example: 'Stilton and port after dinner is very British.', exampleZh: '飯後藍紋起司配波特酒非常英國。' },
+        { en: 'clotted cream', zh: '凝脂奶油', art: '🥛', note: '康瓦爾與德文郡特產，配司康與果醬吃 cream tea。', example: 'Scones, jam and clotted cream — that’s a cream tea.', exampleZh: '司康、果醬加凝脂奶油——這就是奶油茶點。' },
+        { en: 'free-range eggs', zh: '放牧雞蛋', art: '🥚', note: '英國蛋盒標 free-range / organic / barn；蛋殼上的獅子標記代表安全生食。', example: 'Half a dozen free-range eggs, medium.', exampleZh: '半打中型放牧雞蛋。' },
+        { en: 'butter', zh: '奶油', art: '🧈', note: '分 salted 與 unsalted；烘焙用無鹽，抹麵包用有鹽。', example: 'Use unsalted butter for baking so you control the salt.', exampleZh: '烘焙用無鹽奶油，鹹度才控制得住。' },
+        { en: 'natural yoghurt', zh: '無糖原味優格', art: '🥣', note: '英式拼 yoghurt；Greek yoghurt 更濃稠，Greek-style 是仿製版。', example: 'A dollop of natural yoghurt cools the curry down.', exampleZh: '一大匙原味優格能讓咖哩降火。' },
+        { en: 'sourdough loaf', zh: '酸種麵包', art: '🍞', note: '一整條叫 a loaf；切片的叫 sliced loaf，英式吐司叫 white / wholemeal bread。', example: 'A sourdough loaf, sliced, please.', exampleZh: '請給我一條酸種麵包，切片。' },
+        { en: 'crumpet', zh: '英式煎餅（蜂窩鬆餅）', art: '🥞', note: '表面滿是小孔，烤過抹奶油讓它滲下去，是英國早餐經典。', example: 'Toast the crumpets and let the butter soak in.', exampleZh: '把英式煎餅烤過，讓奶油滲進孔裡。' },
+        { en: 'scone', zh: '司康', art: '🧁', note: '發音是英國永遠吵不完的話題（scon vs scone）；先抹果醬還是奶油也吵。', example: 'Jam first or cream first? It starts arguments.', exampleZh: '先抹果醬還是先抹奶油？這會吵起來。' },
+        { en: 'hot cross bun', zh: '十字麵包', art: '🥯', note: '香料葡萄乾甜麵包，表面有十字，復活節前後大量上架。', example: 'Hot cross buns appear in shops the day after Christmas.', exampleZh: '十字麵包聖誕節隔天就上架了。' }
+      ]
+    },
+    {
+      id: 'cupboard',
+      icon: '🥫',
+      title: 'Store Cupboard',
+      titleZh: '儲藏櫃與調味',
+      blurb: '罐頭、乾貨與英國廚房一定有的那幾罐。',
+      items: [
+        { en: 'tinned tomatoes', zh: '番茄罐頭', art: '🥫', note: '英式叫 tin，美式叫 can；chopped 是切丁，plum 是整顆去皮。', example: 'Two tins of chopped tomatoes for the ragù.', exampleZh: '兩罐番茄丁做肉醬。' },
+        { en: 'baked beans', zh: '茄汁焗豆', art: '🥫', note: '英式早餐與 beans on toast 的主角，Heinz 是國民品牌。', example: 'Beans on toast is the national emergency dinner.', exampleZh: '烤吐司配焗豆是英國的萬用救急晚餐。' },
+        { en: 'chickpeas', zh: '鷹嘴豆', art: '🥫', note: '罐頭的水叫 aquafaba，可以打發代替蛋白。', example: 'Drain the chickpeas but keep the aquafaba.', exampleZh: '鷹嘴豆瀝乾，但那罐水留著。' },
+        { en: 'plain flour', zh: '中筋麵粉', art: '🌾', note: '英式 plain flour ≈ 美式 all-purpose；self-raising flour 已含泡打粉。', example: 'Plain flour, not self-raising, or it’ll rise weirdly.', exampleZh: '要用中筋麵粉，不是自發粉，不然會發得很怪。' },
+        { en: 'caster sugar', zh: '細砂糖', art: '🍚', note: '顆粒比 granulated 細，烘焙專用；icing sugar 是糖粉，demerara 是粗糖。', example: 'Caster sugar dissolves faster in the batter.', exampleZh: '細砂糖在麵糊裡溶得比較快。' },
+        { en: 'stock cube', zh: '高湯塊', art: '🧊', note: '英國廚房必備；也有 stock pot（膏狀）與 bouillon（粉狀）。', example: 'Crumble a stock cube into the pan with the water.', exampleZh: '把高湯塊捏碎，跟水一起下鍋。' },
+        { en: 'Worcestershire sauce', zh: '伍斯特醬', art: '🫙', note: '鯷魚發酵的英國經典醬料，發音約 WUUS-ter-sher；加在牧羊人派和血腥瑪麗裡。', example: 'A few dashes of Worcestershire sauce lift the mince.', exampleZh: '幾滴伍斯特醬能提升絞肉的味道。' },
+        { en: 'Marmite', zh: '酵母抹醬', art: '🫙', note: '啤酒酵母做的鹹味抹醬，官方標語就是「你不是愛它就是恨它」。', example: 'Marmite: you either love it or you hate it.', exampleZh: '酵母抹醬：你不是愛它就是恨它。' },
+        { en: 'malt vinegar', zh: '麥芽醋', art: '🫙', note: '炸魚薯條專用的深色醋，香氣濃；一般料理用 white wine vinegar。', example: 'Chips aren’t chips without malt vinegar.', exampleZh: '薯條沒有麥芽醋就不算薯條。' },
+        { en: 'English mustard', zh: '英式黃芥末', art: '🫙', note: '比法式第戎嗆非常多，配火腿與牛肉；一次別擠太多。', example: 'Go easy — English mustard will take your head off.', exampleZh: '別放太多——英式芥末嗆到會讓你彈起來。' },
+        { en: 'gravy granules', zh: '肉汁粉', art: '🥫', note: '沖水就成肉汁，英國週日烤肉的作弊神器（Bisto 最有名）。', example: 'Nobody admits to using gravy granules, but everyone does.', exampleZh: '沒人承認用肉汁粉，但每個人都在用。' },
+        { en: 'porridge oats', zh: '燕麥片', art: '🥣', note: '英式早餐 porridge 用；rolled oats 較大片，jumbo oats 更粗。', example: 'Porridge oats with milk and a spoon of honey.', exampleZh: '燕麥片加牛奶和一匙蜂蜜。' }
+      ]
+    },
+    {
+      id: 'shop-talk',
+      icon: '🧾',
+      title: 'Shop Talk',
+      titleZh: '賣場與結帳用語',
+      blurb: '推車、走道、黃標特價與自助結帳——英國超市的實戰句子。',
+      items: [
+        { en: 'trolley', zh: '購物推車', art: '🛒', note: '英式 trolley，美式 shopping cart；小提籃是 basket。', example: 'Grab a trolley, we need a proper shop this week.', exampleZh: '拿台推車，這週要好好採買一次。' },
+        { en: 'aisle', zh: '貨架走道', art: '🧭', note: 'aisle 的 s 不發音（唸 “I’ll”）；問路就說 which aisle。', example: 'Excuse me, which aisle is the tinned fish in?', exampleZh: '不好意思，魚罐頭在哪一條走道？' },
+        { en: 'self-checkout', zh: '自助結帳機', art: '🖥️', note: '機器常說 “unexpected item in the bagging area”，是英國人的共同創傷。', example: 'The self-checkout’s having a meltdown again.', exampleZh: '自助結帳機又在鬧脾氣了。' },
+        { en: 'till', zh: '收銀台', art: '💷', note: '英式 till，美式 register / checkout；有人結帳的叫 manned till。', example: 'Only two tills open and the queue’s enormous.', exampleZh: '只開兩個收銀台，隊伍長得要命。' },
+        { en: 'loyalty card', zh: '會員集點卡', art: '💳', note: 'Tesco 叫 Clubcard，Sainsbury’s 叫 Nectar；很多折扣只有會員價。', example: 'Have you got a Clubcard? The price is half with one.', exampleZh: '你有會員卡嗎？有的話價格只要一半。' },
+        { en: 'reduced to clear', zh: '即期出清（黃標）', art: '🏷️', note: '貼黃標的即期品，傍晚打折最兇；獵黃標的人叫 yellow sticker hunters。', example: 'Go at eight and the reduced shelf is full.', exampleZh: '八點去，即期特價架滿滿都是東西。' },
+        { en: 'use by / best before', zh: '有效期限／賞味期限', art: '📅', note: 'use by 是安全期限，過了別吃；best before 只是品質，過了通常還能吃。', example: 'Best before is about quality; use by is about safety.', exampleZh: '賞味期限講品質，有效期限講安全。' },
+        { en: 'bag for life', zh: '耐用購物袋', art: '👜', note: '英國塑膠袋收費後的產物，破了拿回店裡可免費換新。', example: 'I’ve got about forty bags for life at home.', exampleZh: '我家裡大概有四十個購物袋。' },
+        { en: 'meal deal', zh: '午餐組合優惠', art: '🥪', note: '三明治＋零食＋飲料一個固定價，是英國上班族午餐的宗教。', example: 'Meal deal — sandwich, crisps and a drink for four quid.', exampleZh: '午餐組合——三明治、洋芋片加飲料，四英鎊。' },
+        { en: 'BOGOF', zh: '買一送一', art: '🎁', note: 'Buy One Get One Free 的縮寫，唸 BOG-off；也有 3 for 2。', example: 'The pasta’s on BOGOF, so grab two.', exampleZh: '義大利麵買一送一，拿兩包。' },
+        { en: 'own brand', zh: '自有品牌', art: '📦', note: '超市自家品牌，分基本款（Tesco Value）與高階款（Taste the Difference）。', example: 'The own-brand stuff is often made in the same factory.', exampleZh: '自有品牌常常是同一間工廠做的。' },
+        { en: 'deli counter', zh: '熟食櫃檯', art: '🥓', note: '現切火腿起司的櫃檯；旁邊還有 fish counter 與 butcher’s counter。', example: 'Two hundred grams of ham from the deli counter, please.', exampleZh: '請在熟食櫃檯給我兩百公克火腿。' },
+        { en: 'loose', zh: '散裝的', art: '⚖️', note: '對比 pre-packed（預先包裝）；散裝可自己挑數量，通常較環保。', example: 'I buy loose veg so I only take what I need.', exampleZh: '我買散裝蔬菜，只拿需要的量。' },
+        { en: 'out of stock', zh: '缺貨', art: '🚫', note: '貨架空了就說 they’re out of…；補貨叫 restock。', example: 'They’re out of eggs again — third week running.', exampleZh: '他們的蛋又缺貨了——連續第三週。' }
+      ]
+    }
+  ]
+}

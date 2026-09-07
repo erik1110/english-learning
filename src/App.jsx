@@ -11,6 +11,7 @@ import Listening from './pages/Listening'
 import Speaking from './pages/Speaking'
 import Dictation from './pages/Dictation'
 import Situations from './pages/Situations'
+import Themes from './pages/Themes'
 import Idioms from './pages/Idioms'
 import Settings from './pages/Settings'
 
@@ -35,6 +36,7 @@ const NAV = [
   {
     group: '口語與表達',
     items: [
+      { id: 'themes', icon: '🛒', label: '主題單字' },
       { id: 'situations', icon: '💬', label: '英文情境' },
       { id: 'idioms', icon: '🇬🇧', label: '道地英語用法' }
     ]
@@ -64,6 +66,7 @@ export default function App() {
       case 'listening': return <Listening />
       case 'speaking': return <Speaking />
       case 'dictation': return <Dictation />
+      case 'themes': return <Themes />
       case 'situations': return <Situations />
       case 'idioms': return <Idioms />
       case 'settings': return <Settings />
